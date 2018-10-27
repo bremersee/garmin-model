@@ -36,7 +36,7 @@ public class JaxbContextTest {
 
   @Before
   public void createJAXBContext() throws JAXBException {
-    this.jaxbContext = JAXBContext.newInstance(JaxbContextHelper.contextPaths());
+    this.jaxbContext = JAXBContext.newInstance(GarminJaxbContextHelper.contextPaths());
   }
 
   @Test
@@ -54,12 +54,13 @@ public class JaxbContextTest {
   public void testXmlSchemaWithGpx() throws JAXBException, IOException {
     System.out.println("Testing XML schema with PPX ...");
 
-    final String[] paths = JaxbContextHelper.contextPathsBuilder(
-        org.bremersee.gpx.JaxbContextHelper.CONTEXT_PATHS);
+    final String[] paths = GarminJaxbContextHelper.contextPathsBuilder(
+        org.bremersee.gpx.GpxJaxbContextHelper.CONTEXT_PATHS);
     Assert.assertTrue(Arrays.asList(paths).contains(ObjectFactory.class.getPackage().getName()));
     Assert.assertTrue(Arrays.asList(paths).contains(
         org.bremersee.gpx.model.ObjectFactory.class.getPackage().getName()));
-    final JAXBContext jaxbContext = JAXBContext.newInstance(JaxbContextHelper.contextPaths(paths));
+    final JAXBContext jaxbContext = JAXBContext.newInstance(
+        GarminJaxbContextHelper.contextPaths(paths));
 
     final BufferSchemaOutputResolver res = new BufferSchemaOutputResolver();
     jaxbContext.generateSchema(res);

@@ -22,7 +22,7 @@ package org.bremersee.garmin;
  * @author Christian Bremer
  */
 @SuppressWarnings("WeakerAccess")
-public abstract class JaxbContextHelper {
+public abstract class GarminJaxbContextHelper {
 
   public static final String[] CONTEXT_PATHS = {
       org.bremersee.garmin.acceleration.v1.model.ext.ObjectFactory.class.getPackage().getName(),
