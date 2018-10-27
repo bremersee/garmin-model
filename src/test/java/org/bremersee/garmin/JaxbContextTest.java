@@ -17,8 +17,11 @@
 package org.bremersee.garmin;
 
 import java.io.IOException;
+import java.util.Arrays;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import org.bremersee.garmin.gpx.v3.model.ext.ObjectFactory;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -53,6 +56,9 @@ public class JaxbContextTest {
 
     final String[] paths = JaxbContextHelper.contextPathsBuilder(
         org.bremersee.gpx.JaxbContextHelper.CONTEXT_PATHS);
+    Assert.assertTrue(Arrays.asList(paths).contains(ObjectFactory.class.getPackage().getName()));
+    Assert.assertTrue(Arrays.asList(paths).contains(
+        org.bremersee.gpx.model.ObjectFactory.class.getPackage().getName()));
     final JAXBContext jaxbContext = JAXBContext.newInstance(JaxbContextHelper.contextPaths(paths));
 
     final BufferSchemaOutputResolver res = new BufferSchemaOutputResolver();
