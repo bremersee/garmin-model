@@ -160,6 +160,7 @@
           <xsdPathWithinArtifact>
             META-INF/JAXB/xsd
           </xsdPathWithinArtifact>
+          <locale>en_GB</locale>
         </configuration>
       </plugin>
       <plugin>
