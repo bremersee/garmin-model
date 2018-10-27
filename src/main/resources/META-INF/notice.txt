@@ -1,0 +1,70 @@
+org.bremersee garmin-model ${project.version}
+Copyright (c) 2018 Christian Bremer
+
+This product is licensed to you under the Apache License, Version 2.0
+(the "License"). You may not use this product except in compliance with
+the License.
+
+This product may include a number of subcomponents with separate
+copyright notices and license terms. Your use of the source code for
+these subcomponents is subject to the terms and conditions of the
+subcomponent's license, as noted in the license.txt file.
+
+Subcomponents:
+
+- all xsd schema files from garmin : no licence found
+
+  see: https://www8.garmin.com/xmlschemas/index.jsp#/web/docs/xmlschemas
+
+  - AccelerationExtensionv1.xsd
+  - ActiveItemExtensionv1.xsd
+  - ActivityExtensionv1.xsd
+  - ActivityExtensionv2.xsd
+  - ActivityGoalsExtensionv1.xsd
+  - AdventuresExtensionv1.xsd
+  - CalorieBurnDataV1.xsd
+  - clientprofilev1.xsd
+  - ConverterPluginv1.xsd
+  - CourseExtensionv1.xsd
+  - CreationTimeExtensionv1.xsd
+  - DataTypeLocationExtension1.xsd
+  - DeviceDownloadV1.xsd
+  - DirectoryListingV1.xsd
+  - Eulav1.xsd
+  - PowerExtensionv1.xsd
+  - PressureExtensionv1.xsd
+  - TripMetaDataExtensionsv1.xsd
+  - ViaPointTransportationModeExtensionsv1.xsd
+  - GarminMobileAppPathExtensionv1.xsd
+  - GpxExtensionsv3.xsd
+  - TrackPointExtensionv1.xsd
+  - TripExtensionsv1.xsd
+  - VideoExtensionv1.xsd
+  - WaypointExtensionv1.xsd
+  - WebLinkExtensionsv1.xsd
+  - fatcalorieextensionv1.xsd
+  - FitnessDeviceLimitsv1.xsd
+  - FlightPlanv1.xsd
+  - ForerunnerLogbookv1.xsd
+  - GarminDeviceExtensionv1.xsd
+  - GarminDeviceExtensionv2.xsd
+  - GarminDevicev1.xsd
+  - GarminDevicev2.xsd
+  - GarminOEMDeviceExtensionv1.xsd
+  - GarminTextTranslationv1.xsd
+  - ggz.xsd
+  - GpxExtensionsv1.xsd
+  - GpxExtensionsv2.xsd
+  - HardwareVersionExtensionv1.xsd
+  - HistoryDatabasev1.xsd
+  - iFixExtensionv1.xsd
+  - MobileExtensionv1.xsd
+  - TrackPointExtensionv2.xsd
+  - TrackStatsExtension.xsd
+  - UserAccountsExtensionv1.xsd
+  - UserProfileExtensionv1.xsd
+  - UserProfileExtensionv2.xsd
+  - UserProfilePowerExtensionv1.xsd
+  - WorkoutDatabasev1.xsd
+  - WorkoutExtensionv1.xsd
+  
