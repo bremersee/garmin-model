@@ -81,6 +81,9 @@ public abstract class GarminJaxbContextHelper {
       org.bremersee.garmin.workout.v1.model.ext.ObjectFactory.class.getPackage().getName()
   };
 
+  private GarminJaxbContextHelper() {
+  }
+
   @SuppressWarnings("WeakerAccess")
   public static String[] contextPathsBuilder(String[] otherContextPaths) {
     if (otherContextPaths == null || otherContextPaths.length == 0) {
