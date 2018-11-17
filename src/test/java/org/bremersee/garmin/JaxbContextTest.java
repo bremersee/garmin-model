@@ -17,12 +17,11 @@
 package org.bremersee.garmin;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ServiceLoader;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import org.bremersee.garmin.gpx.v3.model.ext.ObjectFactory;
-import org.junit.Assert;
-import org.junit.Before;
+import org.bremersee.xml.JaxbContextBuilder;
+import org.bremersee.xml.JaxbContextDataProvider;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -32,11 +31,14 @@ import org.junit.Test;
  */
 public class JaxbContextTest {
 
-  private JAXBContext jaxbContext;
+  private static JAXBContext jaxbContext;
 
-  @Before
-  public void createJAXBContext() throws JAXBException {
-    this.jaxbContext = JAXBContext.newInstance(GarminJaxbContextHelper.contextPaths());
+  @BeforeClass
+  public static void createJAXBContext() {
+    jaxbContext = JaxbContextBuilder
+        .builder()
+        .processAll(ServiceLoader.load(JaxbContextDataProvider.class))
+        .buildJaxbContext();
   }
 
   @Test
@@ -50,22 +52,4 @@ public class JaxbContextTest {
     System.out.println("OK\n");
   }
 
-  @Test
-  public void testXmlSchemaWithGpx() throws JAXBException, IOException {
-    System.out.println("Testing XML schema with PPX ...");
-
-    final String[] paths = GarminJaxbContextHelper.contextPathsBuilder(
-        org.bremersee.gpx.GpxJaxbContextHelper.CONTEXT_PATHS);
-    Assert.assertTrue(Arrays.asList(paths).contains(ObjectFactory.class.getPackage().getName()));
-    Assert.assertTrue(Arrays.asList(paths).contains(
-        org.bremersee.gpx.model.ObjectFactory.class.getPackage().getName()));
-    final JAXBContext jaxbContext = JAXBContext.newInstance(
-        GarminJaxbContextHelper.contextPaths(paths));
-
-    final BufferSchemaOutputResolver res = new BufferSchemaOutputResolver();
-    jaxbContext.generateSchema(res);
-    System.out.print(res);
-
-    System.out.println("OK\n");
-  }
 }
