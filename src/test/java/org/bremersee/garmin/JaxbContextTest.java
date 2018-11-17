@@ -33,6 +33,9 @@ public class JaxbContextTest {
 
   private static JAXBContext jaxbContext;
 
+  /**
+   * Create jaxb context.
+   */
   @BeforeClass
   public static void createJAXBContext() {
     jaxbContext = JaxbContextBuilder
@@ -41,6 +44,11 @@ public class JaxbContextTest {
         .buildJaxbContext();
   }
 
+  /**
+   * Test xml schema.
+   *
+   * @throws IOException the io exception
+   */
   @Test
   public void testXmlSchema() throws IOException {
     System.out.println("Testing XML schema ...");
