@@ -83,6 +83,25 @@
     </site>
   </distributionManagement>
 
+  <repositories>
+    <repository>
+      <id>bremersee-releases</id>
+      <name>Bremersee Releases</name>
+      <url>https://nexus.bremersee.org/repository/maven-releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>bremersee-snapshots</id>
+      <name>Bremersee Snapshots</name>
+      <url>https://nexus.bremersee.org/repository/maven-snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>org.bremersee</groupId>
