@@ -17,16 +17,38 @@
 package org.bremersee.garmin.model;
 
 /**
+ * The common phone number interface.
+ *
  * @author Christian Bremer
  */
 public interface CommonPhoneNumberT {
 
+  /**
+   * Gets phone number.
+   *
+   * @return the phone number
+   */
   String getValue();
 
+  /**
+   * Sets phone number.
+   *
+   * @param value the phone number
+   */
   void setValue(String value);
 
+  /**
+   * Gets category.
+   *
+   * @return the category
+   */
   String getCategory();
 
+  /**
+   * Sets category.
+   *
+   * @param value the value
+   */
   void setCategory(String value);
 
 }

@@ -17,12 +17,24 @@
 package org.bremersee.garmin.model;
 
 /**
+ * The common display mode interface.
+ *
  * @author Christian Bremer
  */
 public interface CommonDisplayModeT {
 
+  /**
+   * Gets enumeration name.
+   *
+   * @return the enumeration name
+   */
   String name();
 
+  /**
+   * Gets xml value.
+   *
+   * @return the xml value
+   */
   String value();
 
 }

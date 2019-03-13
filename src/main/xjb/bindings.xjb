@@ -150,12 +150,9 @@
       <class/>
       <inheritance:implements>org.bremersee.garmin.model.CommonPhoneNumberT</inheritance:implements>
     </bindings>
-    <!--
-    <bindings node="//xsd:element[@name='WaypointExtension']">
-      <class/>
+    <bindings node="//xsd:complexType[@name='WaypointExtension_t']">
       <inheritance:implements>org.bremersee.garmin.model.CommonWaypointExtension</inheritance:implements>
     </bindings>
-    -->
   </bindings>
 
   <bindings schemaLocation="../xsd/TrackPointExtensionv1.xsd">
@@ -195,12 +192,9 @@
       <class/>
       <inheritance:implements>org.bremersee.garmin.model.CommonPhoneNumberT</inheritance:implements>
     </bindings>
-    <!--
-    <bindings node="//xsd:element[@name='WaypointExtension']">
-      <class/>
+    <bindings node="//xsd:complexType[@name='WaypointExtension_t']">
       <inheritance:implements>org.bremersee.garmin.model.CommonWaypointExtension</inheritance:implements>
     </bindings>
-    -->
   </bindings>
 
   <bindings schemaLocation="../xsd/WebLinkExtensionsv1.xsd">

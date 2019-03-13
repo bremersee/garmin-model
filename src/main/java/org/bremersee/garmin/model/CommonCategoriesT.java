@@ -19,10 +19,17 @@ package org.bremersee.garmin.model;
 import java.util.List;
 
 /**
+ * The common categories interface.
+ *
  * @author Christian Bremer
  */
 public interface CommonCategoriesT {
 
+  /**
+   * Gets categories.
+   *
+   * @return the categories
+   */
   List<String> getCategories();
 
 }

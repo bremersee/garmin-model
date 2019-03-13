@@ -19,30 +19,81 @@ package org.bremersee.garmin.model;
 import java.util.List;
 
 /**
+ * The common waypoint extension interface.
+ *
  * @author Christian Bremer
  */
+@SuppressWarnings("unused")
 public interface CommonWaypointExtension {
 
-  /*
+  /**
+   * Gets proximity.
+   *
+   * @return the proximity
+   */
   Double getProximity();
 
+  /**
+   * Sets proximity.
+   *
+   * @param value the value
+   */
   void setProximity(Double value);
 
+  /**
+   * Gets temperature.
+   *
+   * @return the temperature
+   */
   Double getTemperature();
 
+  /**
+   * Sets temperature.
+   *
+   * @param value the value
+   */
   void setTemperature(Double value);
 
+  /**
+   * Gets depth.
+   *
+   * @return the depth
+   */
   Double getDepth();
 
+  /**
+   * Sets depth.
+   *
+   * @param value the value
+   */
   void setDepth(Double value);
 
+  /**
+   * Gets display mode.
+   *
+   * @return the display mode
+   */
   CommonDisplayModeT getDisplayMode();
 
+  /**
+   * Gets categories.
+   *
+   * @return the categories
+   */
   CommonCategoriesT getCategories();
 
+  /**
+   * Gets address.
+   *
+   * @return the address
+   */
   CommonAddressT getAddress();
 
+  /**
+   * Gets phone numbers.
+   *
+   * @return the phone numbers
+   */
   List<? extends CommonPhoneNumberT> getPhoneNumbers();
-  */
 
 }

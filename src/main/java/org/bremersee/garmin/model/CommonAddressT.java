@@ -19,26 +19,74 @@ package org.bremersee.garmin.model;
 import java.util.List;
 
 /**
+ * The common address interface.
+ *
  * @author Christian Bremer
  */
+@SuppressWarnings("unused")
 public interface CommonAddressT {
 
+  /**
+   * Gets street addresses.
+   *
+   * @return the street addresses
+   */
   List<String> getStreetAddresses();
 
+  /**
+   * Gets city.
+   *
+   * @return the city
+   */
   String getCity();
 
+  /**
+   * Sets city.
+   *
+   * @param value the value
+   */
   void setCity(String value);
 
+  /**
+   * Gets state.
+   *
+   * @return the state
+   */
   String getState();
 
+  /**
+   * Sets state.
+   *
+   * @param value the value
+   */
   void setState(String value);
 
+  /**
+   * Gets country.
+   *
+   * @return the country
+   */
   String getCountry();
 
+  /**
+   * Sets country.
+   *
+   * @param value the value
+   */
   void setCountry(String value);
 
+  /**
+   * Gets postal code.
+   *
+   * @return the postal code
+   */
   String getPostalCode();
 
+  /**
+   * Sets postal code.
+   *
+   * @param value the value
+   */
   void setPostalCode(String value);
 
 }
