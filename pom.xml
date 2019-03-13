@@ -137,6 +137,14 @@
           <include>**</include>
         </includes>
       </resource>
+      <resource>
+        <directory>src/main/xsd</directory>
+        <targetPath>META-INF/JAXB/xsd</targetPath>
+        <filtering>false</filtering>
+        <includes>
+          <include>*.xsd</include>
+        </includes>
+      </resource>
     </resources>
 
     <pluginManagement>
@@ -167,6 +175,35 @@
 
     <plugins>
       <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.14.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <extension>true</extension>
+          <args>
+            <arg>-Xinheritance</arg>
+          </args>
+          <schemaDirectory>src/main/xsd</schemaDirectory>
+          <bindingDirectory>src/main/xjb</bindingDirectory>
+          <generateDirectory>${project.build.directory}/generated-sources/jaxb</generateDirectory>
+          <plugins>
+            <plugin>
+              <groupId>org.jvnet.jaxb2_commons</groupId>
+              <artifactId>jaxb2-basics</artifactId>
+              <version>0.11.1</version>
+            </plugin>
+          </plugins>
+        </configuration>
+      </plugin>
+      <!--
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
         <version>2.4</version>
@@ -186,6 +223,7 @@
           <locale>en_GB</locale>
         </configuration>
       </plugin>
+      -->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
