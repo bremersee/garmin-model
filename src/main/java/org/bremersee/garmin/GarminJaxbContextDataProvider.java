@@ -28,6 +28,27 @@ import org.bremersee.xml.JaxbContextDataProvider;
  */
 public class GarminJaxbContextDataProvider implements JaxbContextDataProvider {
 
+  /**
+   * The constant GPX_NAMESPACES.
+   */
+  @SuppressWarnings("unused")
+  public static final String[] GPX_NAMESPACES = {
+      "http://www.topografix.com/GPX/1/1",
+      "http://www.garmin.com/xmlschemas/WaypointExtension/v1",
+      "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+      "http://www.garmin.com/xmlschemas/TrackPointExtension/v1",
+      "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+      "http://www.garmin.com/xmlschemas/TripExtensions/v1",
+      "http://www.garmin.com/xmlschemas/AdventuresExtensions/v1",
+      "http://www.garmin.com/xmlschemas/PressureExtension/v1",
+      "http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1",
+      "http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1",
+      "http://www.garmin.com/xmlschemas/CreationTimeExtension/v1",
+      "http://www.garmin.com/xmlschemas/AccelerationExtension/v1",
+      "http://www.garmin.com/xmlschemas/PowerExtension/v1",
+      "http://www.garmin.com/xmlschemas/VideoExtension/v1"
+  };
+
   @Override
   public Collection<JaxbContextData> getJaxbContextData() {
     return Arrays.asList(
