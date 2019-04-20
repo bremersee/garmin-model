@@ -39,6 +39,7 @@ public enum ViaPointElevationMode {
   }
 
   @JsonValue
+  @Override
   public String toString() {
     return value;
   }
@@ -52,7 +53,7 @@ public enum ViaPointElevationMode {
   @JsonCreator
   public static ViaPointElevationMode fromValue(String value) {
     for (ViaPointElevationMode e : ViaPointElevationMode.values()) {
-      if (e.value.equalsIgnoreCase(value)) {
+      if (e.value.equalsIgnoreCase(value) || e.name().equalsIgnoreCase(value)) {
         return e;
       }
     }

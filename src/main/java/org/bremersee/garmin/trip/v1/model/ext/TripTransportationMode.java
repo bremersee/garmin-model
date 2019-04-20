@@ -99,6 +99,7 @@ public enum TripTransportationMode {
   }
 
   @JsonValue
+  @Override
   public String toString() {
     return value;
   }
@@ -112,7 +113,7 @@ public enum TripTransportationMode {
   @JsonCreator
   public static TripTransportationMode fromValue(String value) {
     for (TripTransportationMode e : TripTransportationMode.values()) {
-      if (e.value.equalsIgnoreCase(value)) {
+      if (e.value.equalsIgnoreCase(value) || e.name().equalsIgnoreCase(value)) {
         return e;
       }
     }

@@ -14,42 +14,27 @@
  * limitations under the License.
  */
 
-package org.bremersee.garmin.trip.v1.model.ext;
+package org.bremersee.garmin.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The via point calculation mode.
+ * The wpt symbol.
  *
  * @author Christian Bremer
  */
 @SuppressWarnings("unused")
-public enum ViaPointCalculationMode {
+public enum WptSymbol {
 
   /**
-   * Faster time calculation mode.
+   * Flag blue symbol.
    */
-  FASTER_TIME("FasterTime"),
-
-  /**
-   * Shorter distance calculation mode.
-   */
-  SHORTER_DISTANCE("ShorterDistance"),
-
-  /**
-   * Curvy roads calculation mode.
-   */
-  CURVY_ROADS("CurvyRoads"),
-
-  /**
-   * Direct calculation mode.
-   */
-  DIRECT("Direct"); // transportation mode is then not set
+  FLAG_BLUE("Flag, Blue");
 
   private String value;
 
-  ViaPointCalculationMode(String value) {
+  WptSymbol(String value) {
     this.value = value;
   }
 
@@ -63,15 +48,15 @@ public enum ViaPointCalculationMode {
    * From value.
    *
    * @param value the value
-   * @return the via point calculation mode
+   * @return the wpt symbol
    */
   @JsonCreator
-  public static ViaPointCalculationMode fromValue(String value) {
-    for (ViaPointCalculationMode e : ViaPointCalculationMode.values()) {
+  public static WptSymbol fromValue(String value) {
+    for (WptSymbol e : WptSymbol.values()) {
       if (e.value.equalsIgnoreCase(value) || e.name().equalsIgnoreCase(value)) {
         return e;
       }
     }
-    return FASTER_TIME;
+    return FLAG_BLUE;
   }
 }
