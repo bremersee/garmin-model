@@ -30,7 +30,67 @@ public enum TripTransportationMode {
   /**
    * Automotive transportation mode.
    */
-  AUTOMOTIVE("Automotive");
+  AUTOMOTIVE("Automotive"),
+
+  /**
+   * Motorcycling transportation mode.
+   */
+  MOTORCYCLING("Motorcycling"),
+
+  /**
+   * Walking transportation mode.
+   */
+  WALKING("Walking"),
+
+  /**
+   * Hiking transportation mode.
+   */
+  HIKING("Hiking"),
+
+  /**
+   * Mountaineering transportation mode.
+   */
+  MOUNTAINEERING("Mountaineering"),
+
+  /**
+   * Bicycling transportation mode.
+   */
+  BICYCLING("Bicycling"),
+
+  /**
+   * Tour cycling transportation mode.
+   */
+  TOUR_CYCLING("TourCycling"), //
+
+  /**
+   * Mountain biking transportation mode.
+   */
+  MOUNTAIN_BIKING("MountainBiking"), // Mountain Bike
+
+  /**
+   * Atv transportation mode.
+   */
+  ATV("ATV"), // Geländefahrzeug
+
+  /**
+   * Dirt biking transportation mode.
+   */
+  DIRT_BIKING("DirtBiking"),
+
+  /**
+   * Trucking transportation mode.
+   */
+  TRUCKING("Trucking"),
+
+  /**
+   * Rv transportation mode.
+   */
+  RV("RV"), // Wohnmobil
+
+  /**
+   * Offroad transportation mode.
+   */
+  OFFROAD("OffRoad");
 
   private String value;
 
@@ -56,6 +116,6 @@ public enum TripTransportationMode {
         return e;
       }
     }
-    return null;
+    return AUTOMOTIVE;
   }
 }

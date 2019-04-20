@@ -56,6 +56,6 @@ public enum ViaPointElevationMode {
         return e;
       }
     }
-    return null;
+    return STANDARD;
   }
 }

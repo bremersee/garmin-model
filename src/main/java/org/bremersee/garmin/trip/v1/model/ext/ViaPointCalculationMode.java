@@ -30,7 +30,22 @@ public enum ViaPointCalculationMode {
   /**
    * Faster time calculation mode.
    */
-  FASTER_TIME("FasterTime");
+  FASTER_TIME("FasterTime"),
+
+  /**
+   * Shorter distance calculation mode.
+   */
+  SHORTER_DISTANCE("ShorterDistance"),
+
+  /**
+   * Curvy roads calculation mode.
+   */
+  CURVY_ROADS("CurvyRoads"),
+
+  /**
+   * Direct calculation mode.
+   */
+  DIRECT("Direct"); // transportation mode is then not set
 
   private String value;
 
@@ -56,6 +71,6 @@ public enum ViaPointCalculationMode {
         return e;
       }
     }
-    return null;
+    return FASTER_TIME;
   }
 }
