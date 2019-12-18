@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GarminJaxbContextDataProvider.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Garmin Model</a> &gt; <a href="index.source.html" class="el_package">org.bremersee.garmin</a> &gt; <span class="el_source">GarminJaxbContextDataProvider.java</span></div><h1>GarminJaxbContextDataProvider.java</h1><pre class="source lang-java linenums">/*
+ * Copyright 2018 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.bremersee.garmin;
+
+import java.util.Arrays;
+import java.util.Collection;
+import org.bremersee.xml.JaxbContextData;
+import org.bremersee.xml.JaxbContextDataProvider;
+
+/**
+ * Garmin jaxb context data provider.
+ *
+ * @author Christian Bremer
+ */
+<span class="fc" id="L29">public class GarminJaxbContextDataProvider implements JaxbContextDataProvider {</span>
+
+  /**
+   * The constant GPX_NAMESPACES.
+   */
+  @SuppressWarnings(&quot;unused&quot;)
+<span class="fc" id="L35">  public static final String[] GPX_NAMESPACES = {</span>
+      &quot;http://www.topografix.com/GPX/1/1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/WaypointExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/GpxExtensions/v3&quot;,
+      &quot;http://www.garmin.com/xmlschemas/TrackPointExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/GpxExtensions/v3&quot;,
+      &quot;http://www.garmin.com/xmlschemas/TripExtensions/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/AdventuresExtensions/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/PressureExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/CreationTimeExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/AccelerationExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/PowerExtension/v1&quot;,
+      &quot;http://www.garmin.com/xmlschemas/VideoExtension/v1&quot;
+  };
+
+  @Override
+  public Collection&lt;JaxbContextData&gt; getJaxbContextData() {
+<span class="fc" id="L54">    return Arrays.asList(</span>
+        new JaxbContextData(
+<span class="fc" id="L56">            org.bremersee.garmin.acceleration.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/AccelerationExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L59">            org.bremersee.garmin.activeitem.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ActiveItemExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L62">            org.bremersee.garmin.activity.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ActivityExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L65">            org.bremersee.garmin.activity.v2.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ActivityExtensionv2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L68">            org.bremersee.garmin.activitygoals.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ActivityGoalsExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L71">            org.bremersee.garmin.adventures.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/AdventuresExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L74">            org.bremersee.garmin.calorieburndata.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/CalorieBurnDataV1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L77">            org.bremersee.garmin.clientprofile.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/clientprofilev1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L80">            org.bremersee.garmin.converterplugin.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ConverterPluginv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L83">            org.bremersee.garmin.course.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/CourseExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L86">            org.bremersee.garmin.creationtime.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/CreationTimeExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L89">            org.bremersee.garmin.datatypelocation.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/DataTypeLocationExtension1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L92">            org.bremersee.garmin.devicedownload.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/DeviceDownloadV1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L95">            org.bremersee.garmin.directorylisting.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/DirectoryListingV1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L98">            org.bremersee.garmin.eula.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/Eulav1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L101">            org.bremersee.garmin.fatcalorie.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/fatcalorieextensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L104">            org.bremersee.garmin.fitnessdevicelimits.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/FitnessDeviceLimitsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L107">            org.bremersee.garmin.flightplan.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/FlightPlanv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L110">            org.bremersee.garmin.forerunnerlogbook.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ForerunnerLogbookv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L113">            org.bremersee.garmin.garmindevice.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminDeviceExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L116">            org.bremersee.garmin.garmindevice.v2.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminDeviceExtensionv2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L119">            org.bremersee.garmin.garmindevice.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminDevicev1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L122">            org.bremersee.garmin.garmindevice.v2.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminDevicev2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L125">            org.bremersee.garmin.garminmobileapppath.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminMobileAppPathExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L128">            org.bremersee.garmin.garminoemdevice.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminOEMDeviceExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L131">            org.bremersee.garmin.garmintexttranslation.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GarminTextTranslationv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L134">            org.bremersee.garmin.ggz.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ggz.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L137">            org.bremersee.garmin.gpx.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GpxExtensionsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L140">            org.bremersee.garmin.gpx.v2.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GpxExtensionsv2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L143">            org.bremersee.garmin.gpx.v3.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/GpxExtensionsv3.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L146">            org.bremersee.garmin.hardwareversion.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/HardwareVersionExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L149">            org.bremersee.garmin.historydatabase.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/HistoryDatabasev1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L152">            org.bremersee.garmin.ifix.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/iFixExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L155">            org.bremersee.garmin.mobile.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/MobileExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L158">            org.bremersee.garmin.power.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/PowerExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L161">            org.bremersee.garmin.pressure.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/PressureExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L164">            org.bremersee.garmin.trackpoint.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/TrackPointExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L167">            org.bremersee.garmin.trackpoint.v2.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/TrackPointExtensionv2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L170">            org.bremersee.garmin.trackstats.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/TrackStatsExtension.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L173">            org.bremersee.garmin.trip.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/TripExtensionsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L176">            org.bremersee.garmin.tripmetadata.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/TripMetaDataExtensionsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L179">            org.bremersee.garmin.useraccounts.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/UserAccountsExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L182">            org.bremersee.garmin.userprofile.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/UserProfileExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L185">            org.bremersee.garmin.userprofile.v2.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/UserProfileExtensionv2.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L188">            org.bremersee.garmin.userprofilepower.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/UserProfilePowerExtensionv1.xsd&quot;),
+        new JaxbContextData(
+            org.bremersee.garmin.viapointtransportationmode.v1.model.ext.ObjectFactory.class
+<span class="fc" id="L192">                .getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/ViaPointTransportationModeExtensionsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L195">            org.bremersee.garmin.video.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/VideoExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L198">            org.bremersee.garmin.waypoint.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/WaypointExtensionv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L201">            org.bremersee.garmin.weblink.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/WebLinkExtensionsv1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L204">            org.bremersee.garmin.workout.v1.model.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/WorkoutDatabasev1.xsd&quot;),
+        new JaxbContextData(
+<span class="fc" id="L207">            org.bremersee.garmin.workout.v1.model.ext.ObjectFactory.class.getPackage(),</span>
+            &quot;http://bremersee.github.io/xmlschemas/garmin/WorkoutExtensionv1.xsd&quot;)
+    );
+  }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
