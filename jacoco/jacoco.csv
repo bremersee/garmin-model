@@ -65,7 +65,7 @@ Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,ExtensionsT,14,0,2,0,4,0,3,0,
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,WaypointExtension,63,0,2,0,25,0,17,0,16,0
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,AddressT,49,0,2,0,19,0,13,0,12,0
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,CategoriesT,14,0,2,0,4,0,3,0,2,0
-Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,TrackExtension,17,0,0,0,7,0,5,0,5,0
+Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,TrackExtension,7,10,0,0,3,4,2,3,2,3
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,TrackPointExtension,24,0,0,0,10,0,7,0,7,0
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,RoutePointExtension,28,0,2,0,10,0,7,0,6,0
 Garmin Model,org.bremersee.garmin.gpx.v3.model.ext,DisplayModeT,31,45,4,0,5,7,4,2,2,2
