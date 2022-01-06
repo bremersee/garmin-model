@@ -1,6 +1,6 @@
 # Garmin Java Model
 
-[![codecov](https://codecov.io/gh/bremersee/garmin-model/branch/master/graph/badge.svg)](https://codecov.io/gh/bremersee/garmin-model)
+[![codecov](https://codecov.io/gh/bremersee/garmin-model/branch/develop/graph/badge.svg)](https://codecov.io/gh/bremersee/garmin-model)
 
 Java model of Garmin GPX extensions (see src/main/xsd).
 
@@ -8,4 +8,4 @@ Java model of Garmin GPX extensions (see src/main/xsd).
 
 - [Release](https://bremersee.github.io/garmin-model/index.html)
 
-- [Snapshot](https://nexus.bremersee.org/repository/maven-sites/garmin-model/1.1.0-SNAPSHOT/index.html)
+- [Snapshot](https://nexus.bremersee.org/repository/maven-sites/garmin-model/1.1.1-SNAPSHOT/index.html)
