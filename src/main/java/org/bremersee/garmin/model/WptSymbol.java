@@ -682,9 +682,9 @@ public enum WptSymbol {
    */
   ZOO("Zoo", WptSymbolCategory.POI);
 
-  private String value;
+  private final String value;
 
-  private WptSymbolCategory category;
+  private final WptSymbolCategory category;
 
   WptSymbol(String value, WptSymbolCategory category) {
     this.value = value;
