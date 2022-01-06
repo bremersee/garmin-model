@@ -32,7 +32,7 @@ public enum ViaPointElevationMode {
    */
   STANDARD("Standard");
 
-  private String value;
+  private final String value;
 
   ViaPointElevationMode(String values) {
     this.value = values;

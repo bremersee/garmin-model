@@ -47,7 +47,7 @@ public enum ViaPointCalculationMode {
    */
   DIRECT("Direct"); // transportation mode is then not set
 
-  private String value;
+  private final String value;
 
   ViaPointCalculationMode(String value) {
     this.value = value;

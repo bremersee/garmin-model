@@ -92,7 +92,7 @@ public enum TripTransportationMode {
    */
   OFFROAD("OffRoad");
 
-  private String value;
+  private final String value;
 
   TripTransportationMode(String value) {
     this.value = value;
