@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2020 the original author or authors.
+ * Copyright 2018-2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,11 @@
 
 package org.bremersee.garmin;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ServiceLoader;
+import org.assertj.core.api.SoftAssertions;
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.bremersee.garmin.gpx.v3.model.ext.DisplayColorT;
 import org.bremersee.garmin.gpx.v3.model.ext.TrackExtension;
 import org.bremersee.xml.JaxbContextBuilder;
@@ -31,12 +28,14 @@ import org.bremersee.xml.JaxbContextDataProvider;
 import org.bremersee.xml.SchemaMode;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * Jaxb context builder test.
  *
  * @author Christian Bremer
  */
+@ExtendWith(SoftAssertionsExtension.class)
 public class JaxbContextBuilderTest {
 
   private static JaxbContextBuilder jaxbContextBuilder;
@@ -56,32 +55,32 @@ public class JaxbContextBuilderTest {
   /**
    * Test xml.
    *
+   * @param softly the soft assertions
    * @throws Exception the exception
    */
   @Test
-  public void testXml() throws Exception {
+  public void testXml(SoftAssertions softly) throws Exception {
     TrackExtension model = new TrackExtension();
     model.setDisplayColor(DisplayColorT.CYAN);
 
     StringWriter sw = new StringWriter();
     jaxbContextBuilder.buildMarshaller().marshal(model, sw);
     String xmlWithAllSchemaLocations = sw.toString();
-    assertNotNull(xmlWithAllSchemaLocations);
+    softly.assertThat(xmlWithAllSchemaLocations).isNotNull();
 
     sw = new StringWriter();
     jaxbContextBuilder.buildMarshaller(model).marshal(model, sw);
     String xmlWithOneSchemaLocation = sw.toString();
-    assertNotNull(xmlWithOneSchemaLocation);
+    softly.assertThat(xmlWithOneSchemaLocation).isNotNull();
 
-    assertNotEquals(xmlWithAllSchemaLocations, xmlWithOneSchemaLocation);
-    assertTrue(xmlWithOneSchemaLocation.length() < xmlWithAllSchemaLocations.length());
+    softly.assertThat(xmlWithOneSchemaLocation.length())
+        .isLessThan(xmlWithAllSchemaLocations.length());
 
     TrackExtension actualModel = (TrackExtension) jaxbContextBuilder
         .buildUnmarshaller(TrackExtension.class)
         .unmarshal(new StringReader(xmlWithOneSchemaLocation));
-
-    assertNotNull(actualModel);
-    assertEquals(DisplayColorT.CYAN, actualModel.getDisplayColor());
+    softly.assertThat(actualModel).isNotNull();
+    softly.assertThat(actualModel.getDisplayColor()).isEqualTo(DisplayColorT.CYAN);
   }
 
 }
