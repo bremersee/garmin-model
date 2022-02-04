@@ -45,7 +45,7 @@ public class JaxbContextBuilderTest {
    */
   @BeforeAll
   static void createJaxbContextBuilder() {
-    jaxbContextBuilder = JaxbContextBuilder.builder()
+    jaxbContextBuilder = JaxbContextBuilder.newInstance()
         .withSchemaMode(SchemaMode.ALWAYS)
         .withFormattedOutput(false)
         .processAll(ServiceLoader.load(JaxbContextDataProvider.class))
