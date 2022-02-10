@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"org.bremersee.garmin","c":"JaxbContextBuilderTest","l":"JaxbContextBuilderTest()","url":"%3Cinit%3E()"},{"p":"org.bremersee.garmin","c":"JaxbContextBuilderTest","l":"testXml()"}]
+memberSearchIndex = [{"p":"org.bremersee.garmin","c":"JaxbContextBuilderTest","l":"JaxbContextBuilderTest()","url":"%3Cinit%3E()"},{"p":"org.bremersee.garmin","c":"JaxbContextBuilderTest","l":"testXml(SoftAssertions)","url":"testXml(org.assertj.core.api.SoftAssertions)"}]
