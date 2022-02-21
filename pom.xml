@@ -20,7 +20,7 @@
     <github.repo>garmin-model</github.repo>
     <gh-pages-staging-dir>${project.build.directory}/staging</gh-pages-staging-dir>
 
-    <common-xml.version>2.4.0</common-xml.version>
+    <common-xml.version>2.5.0-SNAPSHOT</common-xml.version>
   </properties>
 
   <developers>
@@ -76,7 +76,7 @@
   <dependencies>
     <dependency>
       <groupId>org.bremersee</groupId>
-      <artifactId>common-xml</artifactId>
+      <artifactId>common-xml-adapter</artifactId>
       <version>${common-xml.version}</version>
     </dependency>
     <dependency>
@@ -90,6 +90,12 @@
       <artifactId>jackson-annotations</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.bremersee</groupId>
+      <artifactId>common-xml</artifactId>
+      <version>${common-xml.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
