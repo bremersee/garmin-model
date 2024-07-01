@@ -7,20 +7,21 @@
   <parent>
     <groupId>org.bremersee</groupId>
     <artifactId>common-parent</artifactId>
-    <version>2.4.0</version>
+    <version>3.0.0</version>
     <relativePath/>
   </parent>
 
   <artifactId>garmin-model</artifactId>
-  <version>1.1.1</version>
+  <version>2.0.0</version>
   <name>Garmin Model</name>
+  <inceptionYear>2019</inceptionYear>
   <url>https://github.com/bremersee/garmin-model</url>
 
   <properties>
     <github.repo>garmin-model</github.repo>
     <gh-pages-staging-dir>${project.build.directory}/staging</gh-pages-staging-dir>
 
-    <common-xml.version>2.4.0</common-xml.version>
+    <common-xml.version>3.0.1</common-xml.version>
   </properties>
 
   <developers>
@@ -76,7 +77,7 @@
   <dependencies>
     <dependency>
       <groupId>org.bremersee</groupId>
-      <artifactId>common-xml</artifactId>
+      <artifactId>common-xml-modelling</artifactId>
       <version>${common-xml.version}</version>
     </dependency>
     <dependency>
@@ -90,6 +91,12 @@
       <artifactId>jackson-annotations</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.bremersee</groupId>
+      <artifactId>common-xml</artifactId>
+      <version>${common-xml.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -133,10 +140,41 @@
     </resources>
 
     <plugins>
+      <!-- see: https://github.com/highsource/jaxb-tools -->
+      <plugin>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-maven-plugin</artifactId>
+        <version>4.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <extension>true</extension>
+          <args>
+            <arg>-Xinheritance</arg>
+          </args>
+          <plugins>
+            <plugin>
+              <groupId>org.jvnet.jaxb</groupId>
+              <artifactId>jaxb-plugins</artifactId>
+              <version>4.0.0</version>
+            </plugin>
+          </plugins>
+          <schemaDirectory>src/main/xsd</schemaDirectory>
+          <bindingDirectory>src/main/xjb</bindingDirectory>
+          <generateDirectory>${project.build.directory}/generated-sources/jaxb</generateDirectory>
+          <locale>en_GB</locale>
+        </configuration>
+      </plugin>
+      <!--
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.14.0</version>
+        <version>0.15.3</version>
         <executions>
           <execution>
             <goals>
@@ -164,16 +202,12 @@
         <dependencies>
           <dependency>
             <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-jxc-jdk9</artifactId>
-            <version>2.3.0.1</version>
-          </dependency>
-          <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>javax.activation-api</artifactId>
-            <version>1.2.0</version>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.9</version>
           </dependency>
         </dependencies>
       </plugin>
+      -->
     </plugins>
   </build>
 
