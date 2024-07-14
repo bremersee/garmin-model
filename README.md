@@ -8,4 +8,4 @@ Java model of Garmin GPX extensions (see src/main/xsd).
 
 - [Release](https://bremersee.github.io/garmin-model/index.html)
 
-- [Snapshot](https://nexus.bremersee.org/repository/maven-sites/garmin-model/2.0.0-SNAPSHOT/index.html)
+- [Snapshot](https://nexus.bremersee.org/repository/maven-sites/garmin-model/2.2.0-SNAPSHOT/index.html)
